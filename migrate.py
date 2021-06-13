@@ -2,7 +2,7 @@ import os
 import re
 import subprocess
 from pathlib import Path
-from typing import Dict, Iterable, List, MutableMapping, Optional
+from typing import Iterable, MutableMapping, Optional
 
 import click
 import requirements
@@ -17,6 +17,8 @@ PREVIOUS_TIME_COMMAND = (
 )
 NEW_TIME_COMMAND = '{ { time eval "$cmd" >>"$stdout" 2>&1 ; } >>"$timer" 2>&1 ; } &'
 
+
+package_hash_re = re.compile(r"\-\-hash=sha256:[0-9a-f]{64}")
 version_re = re.compile(r"version=\"(?P<version>.*)\"", re.MULTILINE)
 description_re = re.compile(r"description=\"(?P<description>.*)\"", re.MULTILINE)
 new_line_description_re = re.compile(
@@ -33,11 +35,13 @@ console_scripts_re = re.compile(
 )
 
 
-def get_description(setup: str) -> str:
+def get_description(setup: str) -> Optional[str]:
     for description in description_re.finditer(setup):
         return description.groupdict()["description"]
 
-    return new_line_description_re.findall(setup)[0]
+    new_line_description = new_line_description_re.findall(setup)
+
+    return new_line_description[0] if new_line_description else ""
 
 
 def add_poetry_section(
@@ -140,9 +144,12 @@ def load_requirements(package_path: Path, requirement_filename: str) -> Iterable
     requirements_in = list(
         requirements.parse((package_path / f"{requirement_filename}.in").open())
     )
-    requirements_txt = list(
-        requirements.parse((package_path / f"{requirement_filename}.txt").open())
-    )
+
+    # Strips the --hash:... blocks because not supported by requirements-parse
+    requirements_txt_raw = (package_path / f"{requirement_filename}.txt").read_text()
+    requirements_txt_raw = package_hash_re.sub("", requirements_txt_raw)
+    requirements_txt_raw = requirements_txt_raw.replace("\\", "")
+    requirements_txt = list(requirements.parse(requirements_txt_raw))
 
     missing_names = [
         requirement for requirement in requirements_in if requirement.name is None
