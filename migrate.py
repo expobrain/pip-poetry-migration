@@ -183,7 +183,7 @@ def load_requirements(package_path: Path, requirement_filename: str) -> Iterable
 
 def add_build_system(pyproject: MutableMapping) -> MutableMapping:
     build_system = pyproject.setdefault("build-system", {})
-    build_system["requires"] = ["poetry-core>=1.0.0"]
+    build_system["requires"] = ["setuptools", "poetry-core>=1.0.0"]
     build_system["build-backend"] = "poetry.core.masonry.api"
 
     return pyproject
