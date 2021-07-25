@@ -2,7 +2,7 @@ import os
 import re
 import subprocess
 from pathlib import Path
-from typing import Iterable, MutableMapping, Optional
+from typing import Iterable, List, MutableMapping, Optional
 
 import click
 import requirements
@@ -110,7 +110,7 @@ def add_requirement_section(
 
 
 def get_python_version(setup: str) -> str:
-    python_requires = python_requires_re.findall(setup)
+    python_requires: Optional[List[str]] = python_requires_re.findall(setup)
 
     if not python_requires:
         return "^3.9"
@@ -224,7 +224,7 @@ def add_private_repo(pyproject: MutableMapping, private_repo: str) -> MutableMap
 
 def update_pyproject(
     package_path: Path, namespace: Optional[str], private_repo: Optional[str]
-):
+) -> None:
     setup_path = package_path / "setup.py"
 
     if not setup_path.exists():
@@ -249,16 +249,16 @@ def update_pyproject(
     toml.dump(pyproject, pyproject_path.open("w"))
 
 
-def remove_requirements(package_path: Path):
+def remove_requirements(package_path: Path) -> None:
     for requirement in package_path.glob("requirements*"):
         requirement.unlink()
 
 
-def remove_setup(package_path: Path):
+def remove_setup(package_path: Path) -> None:
     (package_path / "setup.py").unlink(missing_ok=True)
 
 
-def check_dependencies(package_path: Path):
+def check_dependencies(package_path: Path) -> None:
     env = dict(os.environ)
     env.pop("POETRY", None)
     env.pop("VIRTUAL_ENV", None)
@@ -269,7 +269,7 @@ def check_dependencies(package_path: Path):
     )
 
 
-def update_safety_check(package_path: Path):
+def update_safety_check(package_path: Path) -> None:
     check_path = package_path / "bin" / "check"
 
     check = check_path.read_text()
@@ -283,7 +283,7 @@ def migrate(
     namespace: Optional[str],
     delete: bool,
     private_repo: Optional[str],
-):
+) -> None:
     update_pyproject(package_path, namespace, private_repo)
     check_dependencies(package_path)
 
@@ -309,7 +309,7 @@ def main(
     namespace: Optional[str],
     delete: bool,
     private_repo: Optional[str],
-):
+) -> None:
     migrate(package_path, namespace, delete, private_repo)
 
 
