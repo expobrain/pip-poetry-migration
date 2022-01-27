@@ -316,11 +316,14 @@ python-versions = "*"
 
 [[package]]
 name = "requirements-parser"
-version = "0.2.0"
-description = "Parses Pip requirement files"
+version = "0.5.0"
+description = "This is a small Python module for parsing Pip requirement files."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+types-setuptools = ">=57.0.0"
 
 [[package]]
 name = "toml"
@@ -351,6 +354,14 @@ ipython-genutils = "*"
 
 [package.extras]
 test = ["pytest"]
+
+[[package]]
+name = "types-setuptools"
+version = "57.4.7"
+description = "Typing stubs for setuptools"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "types-toml"
@@ -387,7 +398,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7880250c8a309ad833a1107dee43cc1bf3fd4ec712b3045e661f75189c7158b4"
+content-hash = "675cfedcf8fe698cda6bf172ae362b28f8546c1fbf1c43b5b80da5230008871a"
 
 [metadata.files]
 appnope = [
@@ -516,8 +527,8 @@ pyrepl = [
     {file = "pyrepl-0.9.0.tar.gz", hash = "sha256:292570f34b5502e871bbb966d639474f2b57fbfcd3373c2d6a2f3d56e681a775"},
 ]
 requirements-parser = [
-    {file = "requirements-parser-0.2.0.tar.gz", hash = "sha256:5963ee895c2d05ae9f58d3fc641082fb38021618979d6a152b6b1398bd7d4ed4"},
-    {file = "requirements_parser-0.2.0-py2-none-any.whl", hash = "sha256:76650b4a9d98fc65edf008a7920c076bb2a76c08eaae230ce4cfc6f51ea6a773"},
+    {file = "requirements-parser-0.5.0.tar.gz", hash = "sha256:3336f3a3ae23e06d3f0f88595e4052396e3adf91688787f637e5d2ca1a904069"},
+    {file = "requirements_parser-0.5.0-py3-none-any.whl", hash = "sha256:e7fcdcd04f2049e73a9fb150d8a0f9d51ce4108f5f7cbeac74c484e17b12bcd9"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
@@ -530,6 +541,10 @@ tomli = [
 traitlets = [
     {file = "traitlets-5.0.5-py3-none-any.whl", hash = "sha256:69ff3f9d5351f31a7ad80443c2674b7099df13cc41fc5fa6e2f6d3b0330b0426"},
     {file = "traitlets-5.0.5.tar.gz", hash = "sha256:178f4ce988f69189f7e523337a3e11d91c786ded9360174a3d9ca83e79bc5396"},
+]
+types-setuptools = [
+    {file = "types-setuptools-57.4.7.tar.gz", hash = "sha256:9677d969b00ec1c14552f5be2b2b47a6fbea4d0ed4de0fdcee18abdaa0cc9267"},
+    {file = "types_setuptools-57.4.7-py3-none-any.whl", hash = "sha256:ffda504687ea02d4b7751c0d1df517fbbcdc276836d90849e4f1a5f1ccd79f01"},
 ]
 types-toml = [
     {file = "types-toml-0.10.3.tar.gz", hash = "sha256:215a7a79198651ec5bdfd66193c1e71eb681a42f3ef7226c9af3123ced62564a"},
