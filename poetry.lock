@@ -354,7 +354,7 @@ test = ["pytest"]
 
 [[package]]
 name = "types-toml"
-version = "0.1.1"
+version = "0.10.3"
 description = "Typing stubs for toml"
 category = "dev"
 optional = false
@@ -387,7 +387,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "5281c14504e7d547701db0d29e2e666c783e1869f9afd3542c606ce7ccf29e52"
+content-hash = "715f6a315537ab2d591db34934b439c0f9b3509dd34b4f1dbbfaa4fbcd0cebdb"
 
 [metadata.files]
 appdirs = [
@@ -574,7 +574,8 @@ traitlets = [
     {file = "traitlets-5.0.5.tar.gz", hash = "sha256:178f4ce988f69189f7e523337a3e11d91c786ded9360174a3d9ca83e79bc5396"},
 ]
 types-toml = [
-    {file = "types_toml-0.1.1-py2.py3-none-any.whl", hash = "sha256:ccebb129f6d68f49fbeb0efd000d48098b3f62885f0dbe44ad001e8b9c0b62ff"},
+    {file = "types-toml-0.10.3.tar.gz", hash = "sha256:215a7a79198651ec5bdfd66193c1e71eb681a42f3ef7226c9af3123ced62564a"},
+    {file = "types_toml-0.10.3-py3-none-any.whl", hash = "sha256:988457744d9774d194e3539388772e3a685d8057b7c4a89407afeb0a6cbd1b14"},
 ]
 typing-extensions = [
     {file = "typing_extensions-3.10.0.0-py2-none-any.whl", hash = "sha256:0ac0f89795dd19de6b97debb0c6af1c70987fd80a2d62d1958f7e56fcc31b497"},
