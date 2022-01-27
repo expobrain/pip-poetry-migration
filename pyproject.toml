@@ -7,7 +7,7 @@ authors = ["Daniele Esposti <daniele.esposti@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 toml = "^0.10.2"
-click = "^8.0.1"
+click = "^8.0.3"
 requirements-parser = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
