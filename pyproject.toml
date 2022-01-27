@@ -12,7 +12,7 @@ requirements-parser = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"
-pdbpp = "^0.10.2"
+pdbpp = "^0.10.3"
 ipython = "^7.31.1"
 mypy = "^0.931"
 isort = "^5.10.1"
