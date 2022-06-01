@@ -422,7 +422,7 @@ python-versions = "*"
 
 [[package]]
 name = "types-toml"
-version = "0.10.6"
+version = "0.10.7"
 description = "Typing stubs for toml"
 category = "dev"
 optional = false
@@ -455,7 +455,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "3db7e6ec82a42dd53e27e6740790cf45bb2d588c3c5c9de9bb8d44cab3c4553c"
+content-hash = "622ca88adfc11695e834c869a0d17b5007ce4ac8f5990d33005920836a63e7b4"
 
 [metadata.files]
 appnope = [
@@ -648,8 +648,8 @@ types-setuptools = [
     {file = "types_setuptools-57.4.7-py3-none-any.whl", hash = "sha256:ffda504687ea02d4b7751c0d1df517fbbcdc276836d90849e4f1a5f1ccd79f01"},
 ]
 types-toml = [
-    {file = "types-toml-0.10.6.tar.gz", hash = "sha256:6aeb3ed7bfa869381551c774ed6a9142e3eed98a83efa5108a9632eafd56dcd3"},
-    {file = "types_toml-0.10.6-py3-none-any.whl", hash = "sha256:c1289e9fb748a6a1ed068694ded1eb16f83df22d58cc1abae8ef6262403545d8"},
+    {file = "types-toml-0.10.7.tar.gz", hash = "sha256:a567fe2614b177d537ad99a661adc9bfc8c55a46f95e66370a4ed2dd171335f9"},
+    {file = "types_toml-0.10.7-py3-none-any.whl", hash = "sha256:05a8da4bfde2f1ee60e90c7071c063b461f74c63a9c3c1099470c08d6fa58615"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.0.1-py3-none-any.whl", hash = "sha256:7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"},
