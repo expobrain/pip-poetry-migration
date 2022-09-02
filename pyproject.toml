@@ -17,7 +17,7 @@ ipython = "^8.4.0"
 mypy = "^0.971"
 isort = "^5.10.1"
 types-toml = "^0.10.8"
-autoflake = "^1.4"
+autoflake = "^1.5"
 
 [build-system]
 requires = ["setuptools", "poetry-core>=1.0.0"]
