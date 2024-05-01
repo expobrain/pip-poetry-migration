@@ -499,17 +499,17 @@ files = [
 
 [[package]]
 name = "requirements-parser"
-version = "0.5.0"
+version = "0.9.0"
 description = "This is a small Python module for parsing Pip requirement files."
 optional = false
-python-versions = ">=3.6,<4.0"
+python-versions = "<4.0,>=3.8"
 files = [
-    {file = "requirements-parser-0.5.0.tar.gz", hash = "sha256:3336f3a3ae23e06d3f0f88595e4052396e3adf91688787f637e5d2ca1a904069"},
-    {file = "requirements_parser-0.5.0-py3-none-any.whl", hash = "sha256:e7fcdcd04f2049e73a9fb150d8a0f9d51ce4108f5f7cbeac74c484e17b12bcd9"},
+    {file = "requirements_parser-0.9.0-py3-none-any.whl", hash = "sha256:40298fd2bb423798fc52ca4550adf1944d75c998fd2316b5b6959842dbc70a32"},
+    {file = "requirements_parser-0.9.0.tar.gz", hash = "sha256:588f587ab76732d59df4c64bd81f1b4a4f1aaaa9b3eb7ad4f5890685446f03e8"},
 ]
 
 [package.dependencies]
-types-setuptools = ">=57.0.0"
+types-setuptools = ">=69.1.0"
 
 [[package]]
 name = "six"
@@ -582,13 +582,13 @@ test = ["pytest"]
 
 [[package]]
 name = "types-setuptools"
-version = "57.4.7"
+version = "69.5.0.20240423"
 description = "Typing stubs for setuptools"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 files = [
-    {file = "types-setuptools-57.4.7.tar.gz", hash = "sha256:9677d969b00ec1c14552f5be2b2b47a6fbea4d0ed4de0fdcee18abdaa0cc9267"},
-    {file = "types_setuptools-57.4.7-py3-none-any.whl", hash = "sha256:ffda504687ea02d4b7751c0d1df517fbbcdc276836d90849e4f1a5f1ccd79f01"},
+    {file = "types-setuptools-69.5.0.20240423.tar.gz", hash = "sha256:a7ba908f1746c4337d13f027fa0f4a5bcad6d1d92048219ba792b3295c58586d"},
+    {file = "types_setuptools-69.5.0.20240423-py3-none-any.whl", hash = "sha256:a4381e041510755a6c9210e26ad55b1629bc10237aeb9cb8b6bd24996b73db48"},
 ]
 
 [[package]]
@@ -637,4 +637,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "9af6974f6bdf16ffc5bec716b12b02cec52909fdebcbbbc7ee7337d174f7adf9"
+content-hash = "8be6fc1ed3dea224d043f0e40225ee9098464ea73e7d18c25eb8b171c8631de6"
